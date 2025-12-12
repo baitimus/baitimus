@@ -8,7 +8,7 @@
     Currently working on <b><a href="https://absent.one">absent.one</a></b>.
   </p>
 
-  <a href="https://github.com/YOUR_USERNAME">
+  <a href="https://github.com/baitimus">
     <img src="https://img.shields.io/badge/Status-Online-brightgreen?style=for-the-badge&logo=github" />
   </a>
 </div>
@@ -68,7 +68,7 @@ I am a 20-year-old developer obsessed with understanding how things work under t
 ### 📈 Metrics
 
 <div align="center">
-  <img src="https://github-readme-stats1-chi-azure.vercel.app/api?username=baitimus&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&icon_color=39FF14&count_private=true" height="150" alt="stats graph" />
+  <img src="https://github-readme-stats1-chi-azure.vercel.app/api?username=baitimus&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&icon_color=39FF14&count_private=true&v=1" height="150" alt="stats graph" />
   
-  <img src="https://github-readme-stats1-chi-azure.vercel.app/api/top-langs/?username=baitimus&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&lang_count=6" height="150" alt="languages graph" />
+  <img src="https://github-readme-stats1-chi-azure.vercel.app/api/top-langs/?username=baitimus&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&lang_count=6&v=1" height="150" alt="languages graph" />
 </div>
