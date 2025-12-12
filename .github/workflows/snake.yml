@@ -22,11 +22,10 @@ jobs:
     timeout-minutes: 10
     
     steps:
-      # 1. Checkout the repository (Required for the peaceiris action to work correctly)
       - name: Checkout
         uses: actions/checkout@v3
 
-      # 2. Generate the snake
+      # Generates the snake with a custom NEON palette
       - name: generate github-contribution-grid-snake.svg
         uses: Platane/snk/svg-only@v3
         with:
@@ -34,8 +33,8 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake-neon.svg?color_snake=#39FF14&color_dots=#0d1117,#161b22,#0e4429,#26a641,#39FF14
 
-      # 3. Push the snake to the "output" branch
       - name: push github-contribution-grid-snake.svg to the output branch
         uses: peaceiris/actions-gh-pages@v3
         with:
