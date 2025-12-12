@@ -1,67 +1,73 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Building%20the%20Future&fontSize=70&fontAlign=50" width="100%"/>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=35&pause=1000&color=39FF14&center=true&vCenter=true&width=600&lines=System+initialized...;Loading+kernel+modules...;Welcome+to+my+profile." />
   
-  <h1>Hi, I'm <a href="https://github.com/baitimus">Your Name</a>! ⚔️</h1>
+  <h1>👨‍💻 20yo | Low-Level Enthusiast | Proxmox Architect</h1>
   
   <p>
-    <b>Class:</b> Full-Stack Alchemist | <b>Level:</b> 25 | <b>Guild:</b> [Current Company/School]
+    Building bare-metal solutions and scalable frontends. <br/>
+    Currently working on <b><a href="https://absent.one">absent.one</a></b>.
   </p>
 
-  <a href="https://twitter.com/YOUR_HANDLE">
-    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />
-  </a>
-  <a href="https://linkedin.com/in/YOUR_LINKEDIN">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  <a href="https://github.com/YOUR_USERNAME">
+    <img src="https://img.shields.io/badge/Status-Online-brightgreen?style=for-the-badge&logo=github" />
   </a>
 </div>
 
 ---
 
-## 📊 Character Stats
+### 📡 System Telemetry (About Me)
 
-<div align="center">
-  <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  </a>
-  
-  <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=tokyonight&hide_border=true" />
-  </a>
-</div>
+> `root@homelab:~$ whoami`
 
-<br/>
+I am a 20-year-old developer obsessed with understanding how things work under the hood. I bridge the gap between high-performance systems programming and modern web frameworks. When I'm not coding, I'm managing my **Proxmox** homelab or contributing to Open Source.
 
-## 🐍 Exploration Map
-<div align="center">
-  <img src="https://github.com/YOUR_USERNAME/YOUR_USERNAME/blob/output/github-contribution-grid-snake.svg" alt="Snake animation" />
-</div>
+- **🔭 Current Project:** Developing [absent.one](https://absent.one).
+- **💻 The Stack:** C# & C++ for the heavy lifting, TypeScript & Angular for the view.
+- **🏠 Infrastructure:** Self-hosting enthusiast running custom Proxmox clusters.
+- **⚡ Fun Fact:** I prefer `malloc` over garbage collection.
 
 ---
 
-## 🛠️ Inventory (Tech Stack)
+### 🛠️ Tech Stack & Arsenal
 
-<table>
-  <tr>
-    <td align="center" width="90">
-      <img src="https://skillicons.dev/icons?i=js" width="45" height="45" alt="JavaScript" />
-      <br>JS
-    </td>
-    <td align="center" width="90">
-      <img src="https://skillicons.dev/icons?i=react" width="45" height="45" alt="React" />
-      <br>React
-    </td>
-    <td align="center" width="90">
-      <img src="https://skillicons.dev/icons?i=python" width="45" height="45" alt="Python" />
-      <br>Python
-    </td>
-    <td align="center" width="90">
-      <img src="https://skillicons.dev/icons?i=docker" width="45" height="45" alt="Docker" />
-      <br>Docker
-    </td>
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=cpp" width="45" height="45" alt="C++" /><br>C++
+      </td>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=cs" width="45" height="45" alt="C#" /><br>C#
+      </td>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=ts" width="45" height="45" alt="TypeScript" /><br>TypeScript
+      </td>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=angular" width="45" height="45" alt="Angular" /><br>Angular
+      </td>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=linux" width="45" height="45" alt="Linux" /><br>Linux
+      </td>
+      <td align="center" width="90">
+        <img src="https://skillicons.dev/icons?i=docker" width="45" height="45" alt="Docker" /><br>Docker
+      </td>
     </tr>
-</table>
+  </table>
+</div>
+
+---
+
+### 📊 Contribution Graph (The Snake)
 
 <div align="center">
-  <h3>📜 Ancient Scroll of Wisdom</h3>
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=23F7DD&center=true&vCenter=true&width=435&lines=Always+coding...;Debugging+is+like+being+a+detective;in+a+crime+movie+where+you+are;also+the+murderer." />
+  <img src="https://github.com/YOUR_USERNAME/YOUR_USERNAME/blob/output/github-contribution-grid-snake.svg" alt="Snake Animation" width="100%"/>
+</div>
+
+---
+
+### 📈 Metrics
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&icon_color=39FF14" height="150" alt="stats graph" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&lang_count=6" height="150" alt="languages graph" />
 </div>
