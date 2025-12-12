@@ -57,10 +57,10 @@ I am a 20-year-old developer obsessed with understanding how things work under t
 
 ---
 
-### 📊 Contribution Graph (The Snake)
+### 📊 Contribution Graph
 
 <div align="center">
-  <img src="https://github.com/YOUR_USERNAME/YOUR_USERNAME/blob/output/github-contribution-grid-snake.svg" alt="Snake Animation" width="100%"/>
+  <img src="https://raw.githubusercontent.com/baitimus/baitimus/output/github-contribution-grid-snake.svg" alt="Snake Animation" width="100%"/>
 </div>
 
 ---
@@ -68,6 +68,7 @@ I am a 20-year-old developer obsessed with understanding how things work under t
 ### 📈 Metrics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&icon_color=39FF14" height="150" alt="stats graph" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&lang_count=6" height="150" alt="languages graph" />
+  <img src="https://github-readme-stats.vercel.app/api?username=baitimus&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&icon_color=39FF14" height="150" alt="stats graph" />
+  
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=baitimus&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&lang_count=6" height="150" alt="languages graph" />
 </div>
