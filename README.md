@@ -68,7 +68,7 @@ I am a 20-year-old developer obsessed with understanding how things work under t
 ### 📈 Metrics
 
 <div align="center">
-  <img src="github-readme-stats1-3tyk4164m-baitimus-projects.vercel.app/api?username=baitimus&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&icon_color=39FF14" height="150" alt="stats graph" />
+  <img src="https://github-readme-stats1-chi-azure.vercel.app/api?username=baitimus&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&icon_color=39FF14&count_private=true" height="150" alt="stats graph" />
   
-  <img src="github-readme-stats1-3tyk4164m-baitimus-projects.vercel.app/api/top-langs/?username=baitimus&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&lang_count=6" height="150" alt="languages graph" />
+  <img src="https://github-readme-stats1-chi-azure.vercel.app/api/top-langs/?username=baitimus&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=39FF14&lang_count=6" height="150" alt="languages graph" />
 </div>
