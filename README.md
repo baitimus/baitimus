@@ -55,13 +55,7 @@ I am a 20-year-old developer obsessed with understanding how things work under t
   </table>
 </div>
 
----
 
-### 📊 Contribution Graph
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/baitimus/baitimus/output/github-contribution-grid-snake.svg" alt="Snake Animation" width="100%"/>
-</div>
 
 ---
 
