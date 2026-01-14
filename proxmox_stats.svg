@@ -5,7 +5,7 @@
         .title { font-weight: 600; font-size: 18px; fill: #39FF14; }
         .lbl { font-weight: 400; font-size: 14px; fill: #8b949e; }
         .val { font-weight: 600; font-size: 14px; fill: #e6edf3; }
-        .dot { fill: #ff3333; }
+        .dot { fill: #39FF14; }
         .line { stroke: #30363d; stroke-width: 1px; }
       </style>
       
@@ -15,16 +15,16 @@
       <circle cx="410" cy="30" r="5" class="dot">
         <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
       </circle>
-      <text x="395" y="35" class="txt val" text-anchor="end">Offline</text>
+      <text x="395" y="35" class="txt val" text-anchor="end">Online</text>
       
       <line x1="0" y1="55" x2="450" y2="55" class="line" />
 
       <text x="25" y="90" class="txt lbl">CPU LOAD</text>
-      <text x="25" y="115" class="txt val" font-size="20">ERR</text>
+      <text x="25" y="115" class="txt val" font-size="20">4.2%</text>
       
       <text x="200" y="90" class="txt lbl">MEMORY</text>
-      <text x="200" y="115" class="txt val" font-size="20">ERR</text>
+      <text x="200" y="115" class="txt val" font-size="20">8.7% (8/93G)</text>
       
-      <text x="25" y="150" class="txt lbl">LXC: <tspan class="val">0</tspan></text>
+      <text x="25" y="150" class="txt lbl">LXC: <tspan class="val">9</tspan></text>
       <text x="200" y="150" class="txt lbl">VMs: <tspan class="val">0</tspan></text>
     </svg>
