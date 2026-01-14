@@ -19,7 +19,7 @@
 
 ### `whoami`
 
-I'm a 20-year-old dev based in [Your Location]. I spend most of my time working on backend systems and keeping my Proxmox cluster alive. I prefer manual memory management over GC, but I still write plenty of TypeScript when the frontend needs it.
+I'm a 20-year-old dev based in Switzerland. I spend most of my time working on backend systems and keeping my Proxmox cluster alive. I prefer manual memory management over GC, but I still write plenty of TypeScript when the frontend needs it.
 
 - **🔭 Working on:** [absent.one](https://absent.one)
 - **💻 Stack:** C#, C++, TypeScript, Angular
