@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=35&pause=1000&color=39FF14&center=true&vCenter=true&width=600&lines=System+initialized...;20yo+Developer;Homelab+Enthusiast" />
+
   
   <h3>
     C# / C++ Developer & Proxmox Tinkerer
