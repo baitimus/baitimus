@@ -1,0 +1,35 @@
+
+    <svg width="450" height="180" viewBox="0 0 450 180" xmlns="http://www.w3.org/2000/svg">
+      <style>
+        .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1px; rx: 10px; }
+        .title { font: 600 18px 'Segoe UI', Ubuntu, sans-serif; fill: #39FF14; }
+        .label { font: 400 14px 'Segoe UI', Ubuntu, sans-serif; fill: #8b949e; }
+        .val { font: 600 14px 'Segoe UI', Ubuntu, sans-serif; fill: #e6edf3; }
+        .status-dot { fill: #ff3333; }
+        .line { stroke: #30363d; stroke-width: 1px; }
+      </style>
+      
+      <rect x="0.5" y="0.5" width="449" height="179" class="bg" />
+      
+      <text x="25" y="35" class="title">PROXMOX CLUSTER</text>
+      <circle cx="410" cy="30" r="5" class="status-dot">
+        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="350" y="35" class="val" text-anchor="end">UNREACHABLE</text>
+      
+      <line x1="0" y1="55" x2="450" y2="55" class="line" />
+
+      <text x="25" y="90" class="label">CPU LOAD</text>
+      <text x="25" y="115" class="val" font-size="20">N/A</text>
+      
+      <text x="25" y="150" class="label">ACTIVE LXC</text>
+      <text x="110" y="150" class="val">-</text>
+
+      <text x="200" y="90" class="label">MEMORY USAGE</text>
+      <text x="200" y="115" class="val" font-size="20">N/A</text>
+      
+      <text x="200" y="150" class="label">ACTIVE VMS</text>
+      <text x="290" y="150" class="val">-</text>
+
+    </svg>
+    
