@@ -1,0 +1,37 @@
+name: Update Proxmox Stats
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour at minute 0
+  workflow_dispatch: # Allows manual run for testing
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate Stats Image
+        env:
+          PROXMOX_URL: ${{ secrets.PROXMOX_URL }}
+          PROXMOX_USER: ${{ secrets.PROXMOX_USER }}
+          PROXMOX_TOKEN: ${{ secrets.PROXMOX_TOKEN }}
+        run: python gen_stats.py
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add proxmox_stats.svg
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update homelab stats" && git push)
