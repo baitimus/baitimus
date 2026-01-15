@@ -2,7 +2,7 @@
 
   
   <h3>
-    C# / C++ Developer & Proxmox Tinkerer
+    C# / C++ Developer & Proxmox is cool
   </h3>
   
   <p>
