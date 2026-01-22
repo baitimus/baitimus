@@ -1,7 +1,7 @@
 import os
 import requests
 import urllib3
-from datetime import datetime  # Added for timestamping
+from datetime import datetime
 
 # Suppress "Unverified HTTPS request" warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -18,21 +18,17 @@ def get_stats():
         "User-Agent": "GitHub-Action-Proxmox-Stats",
         "Accept": "application/json"
     }
-    
     try:
         r = requests.get(f"{PROXMOX_URL}/api2/json/cluster/resources", headers=headers, verify=False, timeout=20)
-        if r.status_code != 200:
-            print(f"!!! API ERROR: {r.status_code} !!!")
-            return None
-        
+        r.raise_for_status()
         return r.json()['data']
     except Exception as e:
         print(f"Failed to fetch data: {e}")
         return None
 
 def generate_svg(data):
-    # Get current time in UTC
-    now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+    # Format the time with a clear label
+    now = datetime.now().strftime("%b %d, %H:%M:%S") # e.g., Oct 24, 14:30:05
 
     if data is None:
         stats = {"cpu": "ERR", "mem": "ERR", "lxc": "0", "vms": "0", "status": "Offline"}
@@ -40,42 +36,38 @@ def generate_svg(data):
         nodes = [x for x in data if x['type'] == 'node']
         lxcs = [x for x in data if x['type'] == 'lxc' and x['status'] == 'running']
         vms = [x for x in data if x['type'] == 'qemu' and x['status'] == 'running']
-
-        if not nodes:
-            stats = {"cpu": "0%", "mem": "0%", "lxc": "0", "vms": "0", "status": "Offline"}
-        else:
-            cpu = sum(n.get('cpu', 0) for n in nodes) / len(nodes) * 100
-            mem = sum(n.get('mem', 0) for n in nodes)
-            maxmem = sum(n.get('maxmem', 0) for n in nodes)
-            
-            mem_p = (mem / maxmem) * 100 if maxmem > 0 else 0
-            mem_gb = mem / (1024**3)
-            maxmem_gb = maxmem / (1024**3)
-
-            stats = {
-                "cpu": f"{cpu:.1f}%",
-                "mem": f"{mem_p:.1f}% ({mem_gb:.0f}/{maxmem_gb:.0f}G)",
-                "lxc": str(len(lxcs)),
-                "vms": str(len(vms)),
-                "status": "Online"
-            }
+        
+        cpu = sum(n.get('cpu', 0) for n in nodes) / len(nodes) * 100 if nodes else 0
+        mem = sum(n.get('mem', 0) for n in nodes)
+        maxmem = sum(n.get('maxmem', 0) for n in nodes)
+        mem_p = (mem / maxmem) * 100 if maxmem > 0 else 0
+        
+        stats = {
+            "cpu": f"{cpu:.1f}%",
+            "mem": f"{mem_p:.1f}%",
+            "lxc": str(len(lxcs)),
+            "vms": str(len(vms)),
+            "status": "Online"
+        }
 
     color = "#39FF14" if stats['status'] == "Online" else "#ff3333"
     
-    # SVG Construction - Slightly increased height (to 200) for the timestamp
-    svg = f"""<svg width="450" height="200" viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg">
+    # Updated SVG with a high-visibility Footer Bar
+    svg = f"""<svg width="450" height="190" viewBox="0 0 450 190" xmlns="http://www.w3.org/2000/svg">
       <style>
         .bg {{ fill: #0d1117; stroke: #30363d; stroke-width: 1px; rx: 10px; }}
+        .footer-bg {{ fill: #161b22; rx: 0 0 10 10; }} /* Slightly lighter than main bg */
         .txt {{ font-family: 'Segoe UI', Ubuntu, sans-serif; }}
         .title {{ font-weight: 600; font-size: 18px; fill: #39FF14; }}
         .lbl {{ font-weight: 400; font-size: 14px; fill: #8b949e; }}
         .val {{ font-weight: 600; font-size: 14px; fill: #e6edf3; }}
-        .ts {{ font-size: 10px; fill: #484f58; }} /* Subtle style for timestamp */
+        .ts-label {{ font-weight: 600; font-size: 11px; fill: #58a6ff; }} /* Blue accent for 'Updated' */
+        .ts-val {{ font-size: 11px; fill: #c9d1d9; }}
         .dot {{ fill: {color}; }}
         .line {{ stroke: #30363d; stroke-width: 1px; }}
       </style>
       
-      <rect x="0.5" y="0.5" width="449" height="199" class="bg" />
+      <rect x="0.5" y="0.5" width="449" height="189" class="bg" />
       
       <text x="25" y="35" class="txt title">PROXMOX CLUSTER</text>
       <circle cx="410" cy="30" r="5" class="dot">
@@ -92,9 +84,13 @@ def generate_svg(data):
       <text x="200" y="115" class="txt val" font-size="20">{stats['mem']}</text>
       
       <text x="25" y="150" class="txt lbl">LXC: <tspan class="val">{stats['lxc']}</tspan></text>
-      <text x="200" y="150" class="txt lbl">VMs: <tspan class="val">{stats['vms']}</tspan></text>
+      <text x="120" y="150" class="txt lbl">VMs: <tspan class="val">{stats['vms']}</tspan></text>
 
-      <text x="425" y="180" class="txt ts" text-anchor="end">Last Updated: {now}</text>
+      <path d="M0 160 h450 v20 a10 10 0 0 1 -10 10 h-430 a10 10 0 0 1 -10 -10 z" class="footer-bg" />
+      <text x="25" y="178" class="txt">
+        <tspan class="ts-label">REFRESHED: </tspan>
+        <tspan class="ts-val">{now}</tspan>
+      </text>
     </svg>"""
     
     with open("proxmox_stats.svg", "w") as f:
