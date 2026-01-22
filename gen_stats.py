@@ -1,49 +1,39 @@
 import os
 import requests
 import urllib3
+from datetime import datetime  # Added for timestamping
 
-# Suppress "Unverified HTTPS request" warnings (needed for self-signed certs or direct IP access)
+# Suppress "Unverified HTTPS request" warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# --- CONFIGURATION (Loaded from Secrets) ---
-# We strip trailing slashes to prevent url errors
-PROXMOX_URL = os.environ["PROXMOX_URL"].rstrip('/')
-PROXMOX_USER = os.environ["PROXMOX_USER"].strip()
-PROXMOX_TOKEN = os.environ["PROXMOX_TOKEN"].strip()
+# --- CONFIGURATION ---
+PROXMOX_URL = os.environ.get("PROXMOX_URL", "").rstrip('/')
+PROXMOX_USER = os.environ.get("PROXMOX_USER", "").strip()
+PROXMOX_TOKEN = os.environ.get("PROXMOX_TOKEN", "").strip()
 
 def get_stats():
-    # Construct the Authorization Header
-    # Expected format: PVEAPIToken=user@realm!token_name=uuid
     auth_header = f"PVEAPIToken={PROXMOX_USER}!{PROXMOX_TOKEN}"
-    
-    # HEADERS: This is the key part that matches your Cloudflare Rule
     headers = {
         "Authorization": auth_header,
-        "User-Agent": "GitHub-Action-Proxmox-Stats", # <--- MUST MATCH CLOUDFLARE RULE
+        "User-Agent": "GitHub-Action-Proxmox-Stats",
         "Accept": "application/json"
     }
     
-    print(f"Connecting to: {PROXMOX_URL}/api2/json/cluster/resources")
-
     try:
-        # verify=False allows connection even if SSL cert is invalid (common in homelabs)
         r = requests.get(f"{PROXMOX_URL}/api2/json/cluster/resources", headers=headers, verify=False, timeout=20)
-        
-        # Debugging: If it fails, print the response so we know why
         if r.status_code != 200:
             print(f"!!! API ERROR: {r.status_code} !!!")
-            print(f"Response Body: {r.text[:500]}") # Show first 500 chars of error
+            return None
         
-        r.raise_for_status()
-        data = r.json()['data']
-        return data
-
+        return r.json()['data']
     except Exception as e:
         print(f"Failed to fetch data: {e}")
         return None
 
 def generate_svg(data):
-    # Fallback values if connection failed
+    # Get current time in UTC
+    now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+
     if data is None:
         stats = {"cpu": "ERR", "mem": "ERR", "lxc": "0", "vms": "0", "status": "Offline"}
     else:
@@ -54,12 +44,10 @@ def generate_svg(data):
         if not nodes:
             stats = {"cpu": "0%", "mem": "0%", "lxc": "0", "vms": "0", "status": "Offline"}
         else:
-            # Calculate Averages/Totals
             cpu = sum(n.get('cpu', 0) for n in nodes) / len(nodes) * 100
             mem = sum(n.get('mem', 0) for n in nodes)
             maxmem = sum(n.get('maxmem', 0) for n in nodes)
             
-            # Safe division
             mem_p = (mem / maxmem) * 100 if maxmem > 0 else 0
             mem_gb = mem / (1024**3)
             maxmem_gb = maxmem / (1024**3)
@@ -72,21 +60,22 @@ def generate_svg(data):
                 "status": "Online"
             }
 
-    # SVG Construction
     color = "#39FF14" if stats['status'] == "Online" else "#ff3333"
     
-    svg = f"""<svg width="450" height="180" viewBox="0 0 450 180" xmlns="http://www.w3.org/2000/svg">
+    # SVG Construction - Slightly increased height (to 200) for the timestamp
+    svg = f"""<svg width="450" height="200" viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg">
       <style>
         .bg {{ fill: #0d1117; stroke: #30363d; stroke-width: 1px; rx: 10px; }}
         .txt {{ font-family: 'Segoe UI', Ubuntu, sans-serif; }}
         .title {{ font-weight: 600; font-size: 18px; fill: #39FF14; }}
         .lbl {{ font-weight: 400; font-size: 14px; fill: #8b949e; }}
         .val {{ font-weight: 600; font-size: 14px; fill: #e6edf3; }}
+        .ts {{ font-size: 10px; fill: #484f58; }} /* Subtle style for timestamp */
         .dot {{ fill: {color}; }}
         .line {{ stroke: #30363d; stroke-width: 1px; }}
       </style>
       
-      <rect x="0.5" y="0.5" width="449" height="179" class="bg" />
+      <rect x="0.5" y="0.5" width="449" height="199" class="bg" />
       
       <text x="25" y="35" class="txt title">PROXMOX CLUSTER</text>
       <circle cx="410" cy="30" r="5" class="dot">
@@ -104,6 +93,8 @@ def generate_svg(data):
       
       <text x="25" y="150" class="txt lbl">LXC: <tspan class="val">{stats['lxc']}</tspan></text>
       <text x="200" y="150" class="txt lbl">VMs: <tspan class="val">{stats['vms']}</tspan></text>
+
+      <text x="425" y="180" class="txt ts" text-anchor="end">Last Updated: {now}</text>
     </svg>"""
     
     with open("proxmox_stats.svg", "w") as f:
