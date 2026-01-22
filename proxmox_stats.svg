@@ -23,10 +23,10 @@
       <line x1="0" y1="55" x2="450" y2="55" class="line" />
 
       <text x="25" y="90" class="txt lbl">CPU LOAD</text>
-      <text x="25" y="115" class="txt val" font-size="20">1.1%</text>
+      <text x="25" y="115" class="txt val" font-size="20">1.0%</text>
       
       <text x="200" y="90" class="txt lbl">MEMORY</text>
-      <text x="200" y="115" class="txt val" font-size="20">9.0%</text>
+      <text x="200" y="115" class="txt val" font-size="20">9.1%</text>
       
       <text x="25" y="150" class="txt lbl">LXC: <tspan class="val">10</tspan></text>
       <text x="120" y="150" class="txt lbl">VMs: <tspan class="val">0</tspan></text>
@@ -34,6 +34,6 @@
       <path d="M0 160 h450 v20 a10 10 0 0 1 -10 10 h-430 a10 10 0 0 1 -10 -10 z" class="footer-bg" />
       <text x="25" y="178" class="txt">
         <tspan class="ts-label">REFRESHED: </tspan>
-        <tspan class="ts-val">Jan 22, 22:24:08</tspan>
+        <tspan class="ts-val">Jan 22, 23:22:08</tspan>
       </text>
     </svg>
