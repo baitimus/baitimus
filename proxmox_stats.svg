@@ -26,7 +26,7 @@
       <text x="25" y="115" class="txt val" font-size="20">0.6%</text>
       
       <text x="200" y="90" class="txt lbl">MEMORY</text>
-      <text x="200" y="115" class="txt val" font-size="20">9.6%</text>
+      <text x="200" y="115" class="txt val" font-size="20">9.7%</text>
       
       <text x="25" y="150" class="txt lbl">LXC: <tspan class="val">11</tspan></text>
       <text x="120" y="150" class="txt lbl">VMs: <tspan class="val">0</tspan></text>
@@ -34,6 +34,6 @@
       <path d="M0 160 h450 v20 a10 10 0 0 1 -10 10 h-430 a10 10 0 0 1 -10 -10 z" class="footer-bg" />
       <text x="25" y="178" class="txt">
         <tspan class="ts-label">REFRESHED: </tspan>
-        <tspan class="ts-val">Feb 15, 17:25:48</tspan>
+        <tspan class="ts-val">Feb 15, 18:37:30</tspan>
       </text>
     </svg>
