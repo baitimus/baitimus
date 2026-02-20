@@ -1,30 +1,7 @@
-<div align="center">
-
-  
-  <h3>
-    C# / C++ Developer & Proxmox is cool
-  </h3>
-  
-  <p>
-    I like low-level systems and breaking my homelab. <br/>
-    Currently building <b><a href="https://absent.one">absent.one</a></b>.
-  </p>
-
-  <a href="https://github.com/baitimus">
-    <img src="https://img.shields.io/badge/Status-Online-39FF14?style=for-the-badge&logo=github&logoColor=black&labelColor=black" />
-  </a>
-</div>
-
----
-
-### `whoami`
-
-I'm a 20-year-old dev based in Switzerland. I spend most of my time working on backend systems and keeping my Proxmox cluster alive. I prefer manual memory management over GC, but I still write plenty of TypeScript when the frontend needs it.
-
 - **🔭 Working on:** [absent.one](https://absent.one)
 - **💻 Stack:** C#, C++, TypeScript, Angular
 - **🏠 Homelab:** Custom Proxmox cluster (running way too many containers)
-- **⚡ Fun Fact:** I spent 3 days debugging a segfault that turned out to be a typo.
+
 
 ---
 
