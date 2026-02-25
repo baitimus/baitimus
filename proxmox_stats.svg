@@ -34,6 +34,6 @@
       <path d="M0 160 h450 v20 a10 10 0 0 1 -10 10 h-430 a10 10 0 0 1 -10 -10 z" class="footer-bg" />
       <text x="25" y="178" class="txt">
         <tspan class="ts-label">REFRESHED: </tspan>
-        <tspan class="ts-val">Feb 25, 14:50:30</tspan>
+        <tspan class="ts-val">Feb 25, 16:04:10</tspan>
       </text>
     </svg>
