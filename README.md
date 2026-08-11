@@ -13,9 +13,6 @@
 
 ---
 
-### Metrics
-
-
 
 ### 📡 System Telemetry
 <div align="center">
