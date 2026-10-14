@@ -1,6 +1,6 @@
 - **🔭 Working on:**[mind-movement](https://mind-movement.ch/)
 - **💻 Stack:** C#, C++, TypeScript, Angular
-- **🏠 Homelab:** Custom Proxmox cluster (running way too many containers)
+- **🏠 Homelab:** Custom Proxmox cluster
 
 
 ---
