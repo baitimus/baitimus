@@ -1,6 +1,6 @@
 - **🔭 Working on:**[mind-movement](https://mind-movement.ch/)
 - **💻 Stack:** C#, C++, TypeScript, Angular
-- **🏠 Homelab:** Custom Proxmox cluster
+- **🏠 Homelab:** Proxmox cluster
 
 
 ---
@@ -14,7 +14,3 @@
 ---
 
 
-### 📡 System Telemetry
-<div align="center">
-  <img src="./proxmox_stats.svg" alt="Live Proxmox Stats" />
-</div>
