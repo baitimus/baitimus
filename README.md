@@ -1,4 +1,4 @@
-- **🔭 Working on:**[mind-movement](https://mind-movement.ch/)
+- **🔭 Working on:**[mind-movement] (https://mind-movement.ch/)
 - **💻 Stack:** C#, C++, TypeScript, Angular
 - **🏠 Homelab:** Proxmox cluster
 
